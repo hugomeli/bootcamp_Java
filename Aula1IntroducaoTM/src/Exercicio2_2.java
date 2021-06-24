@@ -13,17 +13,18 @@ anual até que a empresa X ultrapasse a empresa Y em seu valor de empresa.
 public class Exercicio2_2 {
     public static void main(String[] args){
         int actualYear = 2021;
-        double valueCompanyX = 1130000;
-        double valueCompanyY = 18400000;
+        double valueCompanyX = 1.13;
+        double valueCompanyY = 18.4;
 
         while (valueCompanyX <= valueCompanyY){
-            System.out.printf("Empresa X - 01/01/%d - Valor da empresa: %.2fm%n", actualYear, valueCompanyX/1000000);
-            System.out.printf("Empresa Y - 01/01/%d - Valor da empresa: %.2fm%n", actualYear, valueCompanyY/1000000);
+            System.out.printf("Empresa X - 01/01/%d - Valor da empresa: %.2fm%n", actualYear, valueCompanyX);
+            System.out.printf("Empresa Y - 01/01/%d - Valor da empresa: %.2fm%n", actualYear, valueCompanyY);
             valueCompanyX = valueCompanyX + (valueCompanyX * 1.48);
             valueCompanyY = valueCompanyY + (valueCompanyY * 0.32);
             actualYear += 1;
         }
-        System.out.printf("Empresa X - 01/01/%d - Valor da empresa: %.2fm%n", actualYear, valueCompanyX/1000000);
-        System.out.printf("Empresa Y - 01/01/%d - Valor da empresa: %.2fm%n", actualYear, valueCompanyY/1000000);
+        System.out.println("-------------- A empresa X ultrapassou a empresa Y ---------------");
+        System.out.printf("Empresa X - 01/01/%d - Valor da empresa: %.2fm%n", actualYear, valueCompanyX);
+        System.out.printf("Empresa Y - 01/01/%d - Valor da empresa: %.2fm%n", actualYear, valueCompanyY);
     }
 }
