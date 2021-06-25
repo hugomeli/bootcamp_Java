@@ -5,6 +5,7 @@ public class Book {
     private String titulo;
     private String isbn;
     private String autor;
+    private boolean emprestado = false;
 
     public Book(){
 
@@ -20,6 +21,7 @@ public class Book {
         this.titulo = book.getTitulo();
         this.isbn = book.getIsbn();
         this.autor = book.getAutor();
+        this.emprestado = book.isEmprestado();
     }
 
     public String getTitulo() {
@@ -44,6 +46,32 @@ public class Book {
 
     public void setAutor(String autor) {
         this.autor = autor;
+    }
+
+    public boolean isEmprestado() {
+        return emprestado;
+    }
+
+    public void setEmprestado(boolean emprestado) {
+        this.emprestado = emprestado;
+    }
+
+    public boolean emprestimo(){
+        if (this.isEmprestado()){
+            return false;
+        } else{
+            this.setEmprestado(true);
+            return true;
+        }
+    }
+
+    public boolean devolucao(){
+        if (this.isEmprestado()){
+            this.setEmprestado(false);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override

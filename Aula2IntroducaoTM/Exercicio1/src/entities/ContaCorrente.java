@@ -2,6 +2,7 @@ package entities;
 
 import exception.DepositoException;
 import exception.SaqueException;
+import exception.TransferenciaException;
 
 public class ContaCorrente {
 
@@ -52,11 +53,19 @@ public class ContaCorrente {
     }
 
     public void saca(double valor) throws SaqueException{
-        if (this.getSaldo() < valor){
-            throw new SaqueException("Valor do saldo insuficiente para efetuar esse saque!" +
-                                    "Saldo atual: " + this.getSaldo());
+        if (this.getSaldo() < valor || valor < 0){
+            throw new SaqueException("Erro no saque!" +
+                                    "\nSaldo atual: " + this.getSaldo());
         }
         this.saldo -= valor;
+    }
+
+    public void transferencia(ContaCorrente destino, double valor) throws TransferenciaException, DepositoException {
+        if (valor < 0 || this.getSaldo() < valor){
+            throw new TransferenciaException("Erro na transferência");
+        }
+        this.saldo -= valor;
+        destino.deposita(valor);
     }
 
     @Override

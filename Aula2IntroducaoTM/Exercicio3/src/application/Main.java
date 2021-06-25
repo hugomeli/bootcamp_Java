@@ -28,5 +28,22 @@ public class Main {
         System.out.println(bk2);
         System.out.println(bk3);
 
+        if (bk1.emprestimo()){
+            System.out.println("O livro " + bk1.getTitulo() + " foi emprestado com sucesso.");
+        } else{
+            System.out.println("O livro " + bk1.getTitulo() + " já está emprestado");
+        }
+
+        if (bk2.devolucao()){
+            System.out.println("O livro " + bk2.getTitulo() + " foi devolvido com sucesso.");
+        } else{
+            System.out.println("O livro " + bk2.getTitulo() + " não está emprestado para poder ser devolvido.");
+        }
+
+        if (bk1.devolucao()){
+            System.out.println("O livro " + bk1.getTitulo() + " foi devolvido com sucesso.");
+        } else{
+            System.out.println("O livro " + bk2.getTitulo() + "não está emprestado para poder ser devolvido.");
+        }
     }
 }
