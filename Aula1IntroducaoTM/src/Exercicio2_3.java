@@ -42,10 +42,9 @@ public class Exercicio2_3 {
             System.out.println();
         }
         double totalPrice = 0;
-        for (int index=0; index < 3; index ++){
-            System.out.println("Produto " + (index+1) + "\n");
-            System.out.println(array[index].toString());
-            totalPrice += array[index].subTotal();
+        for (Product product: array){
+            System.out.println(product.toString());
+            totalPrice += product.subTotal();
         }
         System.out.println("Valor Total: " + totalPrice);
 
