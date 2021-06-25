@@ -1,4 +1,7 @@
 Java.iml
+Bootcamp.iml
+*.iml
+.idea
 out/
 
 # Compiled class file
