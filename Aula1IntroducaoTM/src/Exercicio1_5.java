@@ -33,5 +33,6 @@ public class Exercicio1_5 {
             }
             actualNumber += 1;
         }
+        sc.close();
     }
 }

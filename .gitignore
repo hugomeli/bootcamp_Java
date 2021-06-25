@@ -3,6 +3,7 @@ Bootcamp.iml
 *.iml
 .idea
 out/
+*.xml
 
 # Compiled class file
 *.class

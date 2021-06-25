@@ -47,6 +47,6 @@ public class Exercicio2_3 {
             totalPrice += product.subTotal();
         }
         System.out.println("Valor Total: " + totalPrice);
-
+        sc.close();
     }
 }

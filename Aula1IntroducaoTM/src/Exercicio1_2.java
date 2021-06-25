@@ -20,5 +20,6 @@ public class Exercicio1_2 {
             }
             actualNumber += 1;
         }
+        sc.close();
     }
 }

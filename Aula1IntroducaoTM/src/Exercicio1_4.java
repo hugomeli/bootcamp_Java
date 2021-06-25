@@ -17,6 +17,7 @@ public class Exercicio1_4 {
             }
             actualNumber += 1;
         }
+        sc.close();
     }
 
     public static boolean verifyPrime(int number){

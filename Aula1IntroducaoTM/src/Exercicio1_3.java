@@ -25,5 +25,6 @@ public class Exercicio1_3 {
         } else{
             System.out.println("O número " + n + " não é primo!");
         }
+        sc.close();
     }
 }

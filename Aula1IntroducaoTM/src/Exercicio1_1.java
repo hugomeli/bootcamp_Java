@@ -11,5 +11,6 @@ public class Exercicio1_1 {
         for (int actualNumber=0; actualNumber < amountNumbers*2; actualNumber += 2){
             System.out.print(actualNumber + " ");
         }
+        sc.close();
     }
 }
