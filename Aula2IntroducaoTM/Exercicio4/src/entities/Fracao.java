@@ -1,16 +1,23 @@
 package entities;
 
+import exceptions.DenominadorException;
+
 public class Fracao {
     private int numerador;
     private int denominador;
 
     public Fracao(){
-
+        this.numerador = 1;
+        this.denominador = 1;
     }
 
-    public Fracao(int numerador, int denominador){
-        this.numerador = numerador;
-        this.denominador = denominador;
+    public Fracao(int numerador, int denominador) throws DenominadorException {
+        if (denominador == 0){
+            throw new DenominadorException("O denominador não pode ser zero!");
+        } else{
+            this.numerador = numerador;
+            this.denominador = denominador;
+        }
     }
 
     public Fracao(Fracao segundaFracao){
@@ -30,7 +37,10 @@ public class Fracao {
         return denominador;
     }
 
-    public void setDenominador(int denominador) {
+    public void setDenominador(int denominador) throws DenominadorException {
+        if (denominador == 0) {
+            throw new DenominadorException("O denominador não pode ser zero!");
+        }
         this.denominador = denominador;
     }
 
@@ -48,7 +58,7 @@ public class Fracao {
         }
     }
 
-    public void adicionar(int numeroInteiro){
+    public void adicionar(int numeroInteiro) throws DenominadorException {
         Fracao fracaoComUm = new Fracao(numeroInteiro, 1);
         adicionar(fracaoComUm);
     }
@@ -65,7 +75,7 @@ public class Fracao {
         this.numerador -= segundaFracao.getNumerador();
     }
 
-    public void subtrair(int numeroInteiro){
+    public void subtrair(int numeroInteiro) throws DenominadorException {
         Fracao fracaoComUm = new Fracao(numeroInteiro, 1);
         subtrair(fracaoComUm);
     }

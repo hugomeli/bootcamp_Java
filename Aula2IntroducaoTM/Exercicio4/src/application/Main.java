@@ -6,29 +6,27 @@ ser usados para operar entre frações e números inteiros (por exemplo: ⅗ + 2
 package application;
 
 import entities.Fracao;
+import exceptions.DenominadorException;
 
 public class Main {
     public static void main(String[] args) {
 
-        Fracao fracao1 = new Fracao(3, 5);
-        Fracao fracao2 = new Fracao(1, 2);
+        try{
+            Fracao fracao1 = new Fracao(1, 5);
+            fracao1.adicionar(1);
+            System.out.println(fracao1);
+        }catch(DenominadorException e){
+            System.out.println(e.getMessage());
+        }
 
-        fracao1.adicionar(fracao2);
-        System.out.println(fracao1);
-
-        Fracao fracao3 = new Fracao(1, 2);
-        fracao2.adicionar(fracao3);
+        Fracao fracao2 = new Fracao();
+        fracao2.setNumerador(10);
+        try{
+            fracao2.setDenominador(0);
+        }catch(DenominadorException e){
+            System.out.println(e.getMessage());
+        }
         System.out.println(fracao2);
-
-        Fracao fracao4 = new Fracao(5, 8);
-        fracao4.multiplicar(4);
-        System.out.println(fracao4);
-
-        Fracao fracao5 = new Fracao(4, 10);
-        Fracao fracao6 = new Fracao(5, 8);
-
-        fracao5.adicionar(5);
-        System.out.println(fracao5);
 
     }
 }

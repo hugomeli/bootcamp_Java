@@ -7,5 +7,10 @@ A classe GregorianCalendar deve ser investigada e usada para implementar os cons
 
 package application;
 
+import entities.Data;
+
 public class Main {
+    public static void main(String[] args){
+        Data dt = new Data(10, 7, 1990);
+    }
 }
