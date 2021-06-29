@@ -8,9 +8,17 @@ A classe GregorianCalendar deve ser investigada e usada para implementar os cons
 package application;
 
 import entities.Data;
+import exceptions.DataException;
 
 public class Main {
     public static void main(String[] args){
-        Data dt = new Data(10, 7, 1990);
+        try{
+            Data dt = new Data(28, 02, 1992);
+            dt.adicionaDia();
+            dt.adicionaDia();
+            System.out.println(dt.toString());
+        } catch(DataException ex){
+            System.out.println(ex.getMessage());
+        }
     }
 }
