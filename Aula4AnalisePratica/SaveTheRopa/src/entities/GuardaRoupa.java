@@ -1,6 +1,5 @@
 package entities;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,6 +12,12 @@ public class GuardaRoupa {
         dicionarioRoupas.put(contador, listaDeVestuario);
         contador += 1;
         return contador;
+    }
+
+    public List<Vestuario> devolverVestuarios(Integer id){
+        List<Vestuario> vestuarios = dicionarioRoupas.get(id);
+        dicionarioRoupas.remove(id);
+        return vestuarios;
     }
 
     public void mostrarVestuarios(){

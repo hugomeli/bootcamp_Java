@@ -32,5 +32,16 @@ public class Main {
 
         guardaRoupa.mostrarVestuarios();
 
+        System.out.println("------- Retirando as roupas da chave 1 -------");
+        List<Vestuario> vestuariosRetirados = guardaRoupa.devolverVestuarios(1);
+        for (Vestuario vestuario:
+             vestuariosRetirados) {
+            System.out.println("\nVestuário retirado: " + "\nMarca: " + vestuario.getMarca()+
+                              "\nModelo: " + vestuario.getModelo());
+        }
+
+        System.out.println("\n------Pesquisa apos retirada de vestuarios-------");
+        guardaRoupa.mostrarVestuarios();
+
     }
 }
